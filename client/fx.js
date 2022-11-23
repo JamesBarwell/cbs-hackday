@@ -1,7 +1,7 @@
 //https://github.com/fawazahmed0/currency-api
 
 const https = require('https');
-const validCurrencies = require('./valid-currencies.json');
+const validCurrencies = require('./fx-valid-currencies.json');
 
 const host = "cdn.jsdelivr.net";
 const pathPrefix = "/gh/fawazahmed0/currency-api@1";
@@ -57,11 +57,6 @@ function makeJsonGetRequest(path) {
     req.end();
   });
 }
-
-//async function getList() {
-//  const path = `${pathPrefix}/latest/currencies.json`;
-//  return makeJsonGetRequest(path);
-//}
 
 async function getRates(symbol, date) {
   validateSymbol(symbol);
@@ -145,7 +140,6 @@ async function getRelativeRateForDateRange(
 }
 
 module.exports = {
-  //getList,
   getRates,
   getRatesForDateRange,
   getRelativeRate,
