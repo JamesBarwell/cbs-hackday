@@ -20,3 +20,7 @@ Run this to install dependencies: ```npm install```
 ## How to use
 
 Run this: ```node example.js```
+
+## Documentation
+
+- Chart JS: https://www.chartjs.org/docs/latest/getting-started/
