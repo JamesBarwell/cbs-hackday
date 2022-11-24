@@ -19,8 +19,13 @@ Run this to install dependencies: ```npm install```
 
 ## How to use
 
-Run this: ```node example.js```
+For the CLI, run: ```node cli.js```
+
+For the webserver, run: ```node server.js```
 
 ## Documentation
 
+- Express JS: https://expressjs.com/en/starter/hello-world.html
 - Chart JS: https://www.chartjs.org/docs/latest/getting-started/
+- Axois: https://axios-http.com/docs/intro
+- Mustache: https://github.com/janl/mustache.js/

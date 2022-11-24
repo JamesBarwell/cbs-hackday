@@ -13,6 +13,8 @@ app.set('view engine', 'mustache');
 app.engine('mustache', mustacheExpress());
 
 
+// This route serves the homepage. You can add new keys and values to the object,
+// then consume them within the "view" template file to make your page dynamic.
 app.get('/', (req, res) => {
   res.render('home', {
     title: 'Home page',
@@ -20,6 +22,8 @@ app.get('/', (req, res) => {
   });
 })
 
+// The webpage will call this endpoint when it loads, and uses the data
+// to populate the chart.
 app.get('/chart-data', async(req, res) => {
   const data = [
     {
