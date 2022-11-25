@@ -1,9 +1,11 @@
 const fxClient = require('./client/fx.js');
+const customersClient = require('./client/customers');
 
 async function main() {
   console.log('start');
 
   await outputFxExamplesToConsole();
+  await outputCustomerInfoToConsole();
 
   outputExampleTableToConsole();
 
@@ -48,6 +50,13 @@ function outputExampleTableToConsole() {
     { name: 'R2D2', email: 'r2d2@droids.com', job: 'Astromech Droid' },
   ];
   console.table(objectData);
+}
+
+async function outputCustomerInfoToConsole() {
+  console.log('--- get customer info ---');
+  const customerInfo = await customersClient.get();
+  console.log('customers retrieved:', customerInfo.length);
+  console.log('sample customer:', customerInfo[0]);
 }
 
 main();
