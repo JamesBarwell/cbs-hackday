@@ -1,11 +1,16 @@
 const fxClient = require('./client/fx.js');
 const customersClient = require('./client/customers');
+const emailClient = require('./client/email');
 
 async function main() {
   console.log('start');
 
   await outputFxExamplesToConsole();
   await outputCustomerInfoToConsole();
+
+  // uncomment below to test out the email sending (recomment when not in use)
+  // you will need to let Ben know if you want an email address to be whitelisted
+  // await emailAlert();
 
   outputExampleTableToConsole();
 
@@ -57,6 +62,14 @@ async function outputCustomerInfoToConsole() {
   const customerInfo = await customersClient.get();
   console.log('customers retrieved:', customerInfo.length);
   console.log('sample customer:', customerInfo[0]);
+}
+
+async function emailAlert() {
+  await emailClient.send({
+    email: 'ben.brunton@t5digital.com',
+    message: 'Test email',
+    subject: 'ALERT!'
+  });
 }
 
 main();
